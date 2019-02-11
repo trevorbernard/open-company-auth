@@ -125,6 +125,9 @@
             scope         (:scope response)
             user-profile  (:user response)
             team-profile  (:team response)]
+        (timbre/info "DBG oauth resp" response)
+        (timbre/info "DBG user-profile" user-profile)
+        (timbre/info "DBG team-profile" team-profile)
         (if (and (:ok response) (valid-access-token? access-token))
           ;; valid response and access token
           ;; w/ identity.basic this response contains all user information we can get
@@ -132,6 +135,7 @@
           (let [user (if user-profile
                         (coerce-to-user user-profile team-profile)
                         (get-user-info access-token scope slack-id))]
+            (timbre/info "DBG user" user)
             ;; return user and Slack org info
             (merge user slack-org splitted-state {:bot slack-bot :slack-token access-token}))
 
