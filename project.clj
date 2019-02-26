@@ -52,7 +52,7 @@
     ;; NB: clj-http pulled in manually
     ;; NB: org.clojure/data.json pulled in manually
 
-    [open-company/lib "0.16.36" :exclusions [clj-http org.clojure/data.json]]
+    [open-company/lib "0.16.37" :exclusions [clj-http org.clojure/data.json]]
     ;; In addition to common functions, brings in the following common dependencies used by this project:
     ;; defun - Erlang-esque pattern matching for Clojure functions https://github.com/killme2008/defun
     ;; if-let - More than one binding for if/when macros https://github.com/LockedOn/if-let
@@ -70,7 +70,7 @@
   ]
 
   :plugins [
-    [lein-ring "0.12.4"]
+    [lein-ring "0.12.5"]
     [lein-environ "1.1.0"] ; Get environment settings from different sources https://github.com/weavejester/environ
   ]
 
