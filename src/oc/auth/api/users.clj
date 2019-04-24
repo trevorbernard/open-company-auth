@@ -324,7 +324,7 @@
                          {:existing-user bots-user})
                        false))
 
-  ;; Acctions
+  ;; Actions
   :post! (fn [ctx] (resend-verification-email conn ctx user-id))
   :patch! (fn [ctx] (update-user conn ctx user-id))
   :delete! (fn [_] (delete-user conn user-id))
